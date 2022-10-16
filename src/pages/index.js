@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gray-100 ">
       <Head>
         <title>Amazon</title>
       </Head>

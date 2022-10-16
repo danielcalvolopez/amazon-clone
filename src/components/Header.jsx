@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HiOutlineSearch as SearchIcon } from "react-icons/hi";
 import { FiShoppingCart as CartIcon } from "react-icons/fi";
+import { BiMenu as MenuIcon } from "react-icons/bi";
 
 const Header = () => {
   return (
@@ -45,7 +46,21 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="flex items-center space-x-3 p-2 pl-5 bg-amazon_blue-light text-white text-sm">
+        <p className="link flex items-center ">
+          <MenuIcon size={30} className="mr-1" />
+          All
+        </p>
+        <p className="link">Prime Video</p>
+        <p className="link">Amazon Business</p>
+        <p className="link">Today's Deals</p>
+        <p className="link hidden lg:inline-flex">Electronics</p>
+        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Prime</p>
+        <p className="link hidden lg:inline-flex">Buy Again</p>
+        <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+      </div>
     </header>
   );
 };

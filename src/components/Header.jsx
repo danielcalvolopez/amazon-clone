@@ -2,6 +2,7 @@ import Image from "next/image";
 import { HiOutlineSearch as SearchIcon } from "react-icons/hi";
 import { FiShoppingCart as CartIcon } from "react-icons/fi";
 import { BiMenu as MenuIcon } from "react-icons/bi";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
           <SearchIcon className="m-2" />
         </div>
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
+          <div className="link" onClick={signIn}>
             <p>Hello Daniel Calvo</p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>

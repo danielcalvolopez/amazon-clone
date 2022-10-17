@@ -5,7 +5,7 @@ import ProductFeed from "../components/ProductFeed";
 
 const Home = ({ products }) => {
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100 overscroll-y-none">
       <Head>
         <title>Amazon</title>
       </Head>

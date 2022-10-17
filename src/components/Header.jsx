@@ -3,15 +3,18 @@ import { HiOutlineSearch as SearchIcon } from "react-icons/hi";
 import { FiShoppingCart as CartIcon } from "react-icons/fi";
 import { BiMenu as MenuIcon } from "react-icons/bi";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   return (
     <header>
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
+            onClick={() => router.push("/")}
             src="https://i.postimg.cc/rmmfqYWD/amazon-PNG11.png"
             alt="logo"
             width={150}
@@ -38,7 +41,10 @@ const Header = () => {
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
 
-          <div className="relative link flex items-center">
+          <div
+            onClick={() => router.push("/checkout")}
+            className="relative link flex items-center"
+          >
             <span className="absolute top-0 -right-1 md:right-12 h-4 w-4 bg-yellow-400 text-center rounded-full text-black text-bold">
               5
             </span>

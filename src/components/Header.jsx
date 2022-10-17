@@ -4,10 +4,13 @@ import { FiShoppingCart as CartIcon } from "react-icons/fi";
 import { BiMenu as MenuIcon } from "react-icons/bi";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/basketSlice";
 
 const Header = () => {
   const { data: session } = useSession();
   const router = useRouter();
+  const items = useSelector(selectItems);
 
   return (
     <header>
@@ -46,7 +49,7 @@ const Header = () => {
             className="relative link flex items-center"
           >
             <span className="absolute top-0 -right-1 md:right-12 h-4 w-4 bg-yellow-400 text-center rounded-full text-black text-bold">
-              5
+              {items.length}
             </span>
             <CartIcon size={30} />
             <p className="hidden md:inline ml-1 font-extrabold md:text-sm mt-2">
